@@ -1,0 +1,21 @@
+ /*if ((onlywords[i] >= '0') && (onlywords[i] <= '9'))
+        {
+            int j1 = j;int k1 = 0;char massiv[10] = {};
+            while (onlywords[j] != ' ')
+            {
+            for(int i11 = 0; i11 < k1+1; i11++)
+            {
+                massiv[i11] = onlywords[j1+k1];
+                j1--;
+            }
+            printf("massiv = %s", massiv);
+            while (onlywords[j] != ' ')
+            {
+                k1 = 0;
+                x = (int) massiv[k1]  - '0';
+                result = result * 10 + x;
+                j++;k1++;printf("\nresult = %d\n", result);
+                                     i = j;
+                                     printf("\ni = j = %d\n", i);
+                                     pushint(stackint, result);
+            }*/

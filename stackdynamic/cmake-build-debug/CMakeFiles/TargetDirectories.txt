@@ -1,0 +1,3 @@
+C:/Users/kuzne/CLionProjects/stackdynamic/cmake-build-debug/CMakeFiles/stackdynamic.dir
+C:/Users/kuzne/CLionProjects/stackdynamic/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kuzne/CLionProjects/stackdynamic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

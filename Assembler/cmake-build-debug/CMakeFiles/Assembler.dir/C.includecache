@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/kuzne/CLionProjects/Assembler/main.c
+stdio.h
+-
+stdlib.h
+-
+mem.h
+-
+stdbool.h
+-
+../proc/Commands.h
+C:/Users/kuzne/CLionProjects/proc/Commands.h
+
+C:/Users/kuzne/CLionProjects/proc/Commands.h
+

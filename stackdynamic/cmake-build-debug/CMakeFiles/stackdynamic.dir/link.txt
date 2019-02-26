@@ -1,0 +1,3 @@
+"C:\Users\kuzne\AppData\Roaming\JetBrains\CLion 2017.2.2\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\stackdynamic.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\stackdynamic.dir/objects.a @CMakeFiles\stackdynamic.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\stackdynamic.dir/objects.a -Wl,--no-whole-archive  -o stackdynamic.exe -Wl,--out-implib,libstackdynamic.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\stackdynamic.dir\linklibs.rsp

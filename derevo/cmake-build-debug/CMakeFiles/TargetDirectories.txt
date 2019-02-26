@@ -1,0 +1,3 @@
+C:/Users/kuzne/CLionProjects/derevo/cmake-build-debug/CMakeFiles/derevo.dir
+C:/Users/kuzne/CLionProjects/derevo/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kuzne/CLionProjects/derevo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

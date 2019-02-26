@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/kuzne/CLionProjects/stackdynamic/main.c
+stdio.h
+-
+malloc.h
+-
+math.h
+-
+assert.h
+-
+mem.h
+-
+

@@ -1,0 +1,119 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char* makebuf(FILE* x, int* lSize);
+
+int change(const void* string1 ,const void* string2);
+
+long leightofbuf(FILE* pFile, long* lei);
+
+char** bufpoint(char* buffer, int* lSize, int* dlinabufpoint);
+
+void fillbufpoint(char* buffer, char** text, int* lSize);
+
+void printbuf(char** text, int* dlinabufpoint);
+
+
+int main() {
+    FILE* pFile;
+
+
+    pFile = fopen( "file.txt", "r");
+    int lSize = 0;
+    char* buffer = makebuf(pFile, &lSize); // создали массив
+
+    int leit = 0;// размер массива указателей
+    char ** text = bufpoint(buffer, &lSize, &leit);
+
+
+
+    fillbufpoint(buffer, text, &lSize);//заполняем массив указаетелей
+
+    qsort(text , leit, sizeof(char*), change);
+
+    printbuf(text, &leit);
+
+    return 0;
+
+}
+
+int change(const void* string1,const void* string2)
+{
+
+    return strcmp(*(char**)string1, *(char**)string2);
+}
+
+char* makebuf(FILE* pFile, int* lSize)
+{
+
+        if (pFile == NULL)
+    {
+        fputs("Ошибка файла", stderr);
+        exit(1);
+    }
+
+    long lei = 0;
+    leightofbuf(pFile, &lei);
+
+    char* buf = (char*)calloc(sizeof(char), lei); // выделение памяти для массива
+
+    fread(buf, sizeof(char), lei, pFile); // запись файла в массив
+    fclose(pFile);
+
+    *lSize = lei;
+    return buf;
+}
+
+long leightofbuf(FILE* pFile, long* lei)
+{
+    fseek(pFile, 0, SEEK_END);
+    //long Size = 0;
+    *lei = ftell(pFile);
+    rewind(pFile);
+    //return lei;
+}
+
+char** bufpoint(char* buffer, int* lSize, int* dlinabufpoint)
+{
+    int i = 0; // счетчик для прохождения по buffer
+    int leit = 0; // dlina massiva ukazateley text[]
+
+    for(i = 0; i < *lSize; i++){
+        if (buffer[i] == '\n')
+            leit++;
+    }
+    leit++;
+
+    char** text = (char**)calloc(sizeof(char*), leit);
+    text[0] = &buffer[0];
+
+    *dlinabufpoint = leit;
+
+    return text;
+}
+
+void fillbufpoint(char* buffer, char** text, int* lSize)
+{
+    int i = 0; // счетчик для прохождения по buffer
+    int j = 1;// счетчик эл-ов text[]
+
+    for( i = 0; i < *lSize; i++) {
+        printf("%c", buffer[i]);
+        if (buffer[i] == '\n')
+        {
+            text[j] = &buffer[i+1];
+            buffer[i] = '\0';
+            j++;
+            // printf("\n %p", text[j]);
+        }
+    }
+}
+
+void printbuf(char** text, int* dlinabufpoint)
+{
+    int o = 0;
+    for ( o = 0; o < *dlinabufpoint; o++)
+    {
+        printf("\n %s", text[o]);
+    }
+}
